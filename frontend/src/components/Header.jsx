@@ -1,7 +1,9 @@
+import API from "../api";
+
 const Header = () => {
 
   const handleDownload = () => {
-    window.open("http://localhost:5000/api/analytics/export", "_blank");
+  window.open(`${API}/api/analytics/export`, "_blank");
   };
 
   return (

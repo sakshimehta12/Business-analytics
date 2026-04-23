@@ -9,6 +9,7 @@ import {
 import { motion } from "framer-motion";
 import PredictionChart from "../components/PredictionChart";
 import "../index.css";
+import API from "../api";
 
 const Dashboard = () => {
 
@@ -20,30 +21,30 @@ const Dashboard = () => {
   const [lowProducts, setLowProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/analytics/total-sales")
-      .then(res => res.json())
-      .then(data => setTotalSales(data.totalSales));
+  fetch(`${API}/api/analytics/total-sales`)
+    .then(res => res.json())
+    .then(data => setTotalSales(data.totalSales));
 
-    fetch("http://localhost:5000/api/analytics/sales-by-category")
-      .then(res => res.json())
-      .then(setCategoryData);
+  fetch(`${API}/api/analytics/sales-by-category`)
+    .then(res => res.json())
+    .then(setCategoryData);
 
-    fetch("http://localhost:5000/api/analytics/sales-by-region")
-      .then(res => res.json())
-      .then(setRegionData);
+  fetch(`${API}/api/analytics/sales-by-region`)
+    .then(res => res.json())
+    .then(setRegionData);
 
-    fetch("http://localhost:5000/api/analytics/sales-trend")
-      .then(res => res.json())
-      .then(setTrendData);
+  fetch(`${API}/api/analytics/sales-trend`)
+    .then(res => res.json())
+    .then(setTrendData);
 
-    fetch("http://localhost:5000/api/analytics/top-products")
-      .then(res => res.json())
-      .then(setTopProducts);
+  fetch(`${API}/api/analytics/top-products`)
+    .then(res => res.json())
+    .then(setTopProducts);
 
-    fetch("http://localhost:5000/api/analytics/low-products")
-      .then(res => res.json())
-      .then(setLowProducts);
-  }, []);
+  fetch(`${API}/api/analytics/low-products`)
+    .then(res => res.json())
+    .then(setLowProducts);
+}, []);
 
 
   return (

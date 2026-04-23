@@ -10,16 +10,17 @@ import {
   ResponsiveContainer,
   ReferenceArea
 } from "recharts";
+import API from "../api";
 
 const PredictionChart = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    Promise.all([
-      fetch("http://localhost:5000/api/analytics/sales-trend").then(res => res.json()),
-      fetch("http://localhost:5001/predict-trend").then(res => res.json())
-    ])
-    .then(([actualData, predictedData]) => {
+  Promise.all([
+    fetch(`${API}/api/analytics/sales-trend`).then(res => res.json()),
+    fetch(`${API}/predict-trend`).then(res => res.json())
+  ])
+  .then(([actualData, predictedData]) => {
 
       const actualMap = {};
       actualData.forEach(item => {

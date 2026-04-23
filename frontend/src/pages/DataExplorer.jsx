@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import PageLayout from "../components/PageLayout";
+import API from "../api";
 
 const DataExplorer = () => {
 
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    fetch("http://localhost:5000/api/analytics/all-data")
-      .then(res => res.json())
-      .then(setData);
-  }, []);
+ useEffect(() => {
+  fetch(`${API}/api/analytics/all-data`)
+    .then(res => res.json())
+    .then(setData);
+}, []);
 
   // 🔍 FILTER LOGIC
   const filteredData = data.filter(row =>
