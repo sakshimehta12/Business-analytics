@@ -108,7 +108,7 @@ python app.py
 
 ## 🌐 Deployment
 
-* Frontend → Netlify
+* Frontend → Render
 * Backend → Render
 * ML API → Render
 * Database → MongoDB Atlas
