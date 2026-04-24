@@ -567,3 +567,124 @@ body {
   color: #4c4c5c;
   margin-top: -10px;
 }
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+
+/* 📱 Tablet */
+@media (max-width: 1024px) {
+
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+
+  .dashboard-main {
+    width: 100%;
+  }
+
+  .insight-panel {
+    position: relative;
+    max-height: none;
+    width: 100%;
+  }
+
+  .kpi-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+
+  /* Sidebar hidden */
+  .sidebar {
+    display: none;
+  }
+
+  /* Main spacing */
+  .dashboard {
+    padding: 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .main-title {
+    font-size: 20px;
+  }
+
+  .export-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* KPI stacked */
+  .kpi-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Charts full width */
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Insight panel fix */
+  .insight-panel {
+    width: 100%;
+  }
+
+  /* Highlight grids */
+  .insight-highlight-grid,
+  .warning-highlight-grid,
+  .opportunity-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Table scroll */
+  .data-table-container {
+    overflow-x: auto;
+  }
+
+  /* Typography adjustments */
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Small Mobile */
+@media (max-width: 480px) {
+
+  .chart-card {
+    padding: 15px;
+  }
+
+  .kpi-card {
+    padding: 15px;
+  }
+
+  .panel-card {
+    padding: 12px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
